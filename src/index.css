@@ -1,13 +1,58 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  font-family: 'Poppins', sans-serif;
+  transition: all 0.1s ease-in-out;
+}
+:root {
+  --teal: rgba(26, 130, 130, 1);
+  --light-blue: rgba(94, 126, 210, 0.2);
+  --light-green: rgba(86, 177, 160, 0.2);
+  --light-purple: rgba(134, 141, 181, 0.2);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.text-teal {
+  color: var(--teal);
+}
+.bg-teal {
+  background-color: var(--teal);
+}
+.bg-purple {
+  background-color: var(--light-purple);
+}
+.bg-green {
+  background-color: var(--light-green);
+}
+.bg-blue {
+  background-color: var(--light-blue);
+}
+.border-teal {
+  border-color: var(--teal);
+}
+.shadow-custom {
+  box-shadow: 1px 1px 10px rgba(182, 182, 182, 0.25);
+}
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+}
+
+.btn-custom {
+  background-color: #549a9a;
+}
+.btn-custom:hover {
+  background-color: var(--teal);
+}
+
+.btn-effect {
+  transition: all 0.1s ease;
+}
+.btn-effect:hover {
+  transform: translateY(-2px);
+}
+.btn-effect:active {
+  transform: translateY(1px);
 }

@@ -1,23 +1,49 @@
-import logo from './logo.svg';
 import './App.css';
+import CardBox from './components/CardBox';
+import Header from './components/Header';
+import Sidebar from './components/Sidebar';
+import { ReactComponent as VehicleIcon } from './assets/icons/truck.svg';
+import { ReactComponent as WalletIcon } from './assets/icons/creditcard.svg';
+import { ReactComponent as BoxIcon } from './assets/icons/gift.svg';
+import Baskets from './components/Baskets';
+import Invites from './components/Invites';
+import PreviousOrders from './components/PreviousOrders';
+import RecentPayments from './components/RecentPayments';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='layout'>
+      <Sidebar />
+      <main className='px-5'>
+        <Header />
+        <div className='flex gap-5 justify-around'>
+          <CardBox
+            title={'In-Transit Jobs'}
+            value={'0'}
+            icon={<VehicleIcon />}
+            color={'bg-blue'}
+          />
+          <CardBox
+            title={'Total Paid'}
+            value={'$0.00'}
+            icon={<WalletIcon />}
+            color={'bg-green'}
+          />
+          <CardBox
+            title={'Completed Jobs'}
+            value={'0'}
+            icon={<BoxIcon />}
+            color={'bg-purple'}
+          />
+        </div>
+
+        <Baskets />
+      </main>
+      <div className='grid grid-rows-3 p-3 border-l-2 border-gray-100'>
+        <Invites />
+        <PreviousOrders />
+        <RecentPayments />
+      </div>
     </div>
   );
 }
