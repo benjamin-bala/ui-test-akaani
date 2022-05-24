@@ -5,6 +5,7 @@ import { ReactComponent as LeftArrow } from '../../assets/icons/arrow-left.svg';
 import coconutImage from '../../assets/coconut.png';
 import DropDown from '../Dropdown';
 import Button from '../Button';
+import { uuid } from '../../utils/uuid';
 
 const cartData = [
   {
@@ -41,7 +42,7 @@ export default function Cart() {
   const [toggleCart, setToggleCart] = React.useState(false);
 
   return (
-    <div className='absolute top-0 right-0 w-full h-full'>
+    <div>
       {!toggleCart && (
         <div
           onClick={() => setToggleCart(!toggleCart)}
@@ -51,36 +52,38 @@ export default function Cart() {
         </div>
       )}
       {toggleCart && (
-        <div className='shadow-lg fixed h-full  w-full md:w-4/12 p-4 right-0 bg-white'>
-          <div className='flex flex-col justify-between h-full'>
-            <div>
-              <div className='flex items-center justify-between'>
-                <div className='flex gap-8 items-center'>
-                  <div
-                    onClick={() => setToggleCart(!toggleCart)}
-                    className='cursor-pointer'
-                  >
-                    <LeftArrow />
+        <div className='absolute top-0 right-0 w-full h-full'>
+          <div className='shadow-lg fixed h-full  w-full md:w-4/12 p-4 right-0 bg-white z-40'>
+            <div className='flex flex-col justify-between h-full'>
+              <div>
+                <div className='flex items-center justify-between'>
+                  <div className='flex gap-8 items-center'>
+                    <div
+                      onClick={() => setToggleCart(!toggleCart)}
+                      className='cursor-pointer'
+                    >
+                      <LeftArrow />
+                    </div>
+                    <h4 className='font-bold text-lg'>My Cart</h4>
                   </div>
-                  <h4 className='font-bold text-lg'>My Cart</h4>
+                  <FloatingIcon />
                 </div>
-                <FloatingIcon />
+
+                <div>
+                  {cartData.map((item) => {
+                    return <CartCard key={uuid()} {...item} />;
+                  })}
+                </div>
               </div>
 
-              <div>
-                {cartData.map((item, index) => {
-                  return <CartCard key={index} {...item} />;
-                })}
-              </div>
-            </div>
-
-            <div className='border-t-2 border-gray-100 py-2 flex justify-between items-center'>
-              <div>
-                <p className='text-gray-600 text-sm'>Total</p>
-                <h3 className='font-bold text-lg'>$2,560</h3>
-              </div>
-              <div onClick={() => setToggleCart(!toggleCart)}>
-                <Button value='DONE SHOPPING' />
+              <div className='border-t-2 border-gray-100 py-2 flex justify-between items-center'>
+                <div>
+                  <p className='text-gray-600 text-sm'>Total</p>
+                  <h3 className='font-bold text-lg'>$2,560</h3>
+                </div>
+                <div onClick={() => setToggleCart(!toggleCart)}>
+                  <Button value='DONE SHOPPING' />
+                </div>
               </div>
             </div>
           </div>

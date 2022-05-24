@@ -1,5 +1,6 @@
 import React from 'react';
 import { ReactComponent as DownArrow } from '../../assets/icons/arrow-down.svg';
+import { uuid } from '../../utils/uuid';
 
 export default function DropDown(props) {
   const [isOpen, setIsOpen] = React.useState(false);
@@ -18,7 +19,7 @@ export default function DropDown(props) {
       </div>
       {isOpen && (
         <div className='bg-white absolute p-2 top-6 w-full h-max rounded z-10'>
-          {props.items.map((item, index) => {
+          {props.items.map((item) => {
             return (
               <p
                 className='text-sm border-y-1 border-gray-100 py-1 cursor-pointer'
@@ -26,6 +27,7 @@ export default function DropDown(props) {
                   setSelectItem(item);
                   toggleDropDown();
                 }}
+                key={uuid()}
               >
                 {item} kg
               </p>
