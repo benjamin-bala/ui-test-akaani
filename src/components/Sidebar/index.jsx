@@ -7,7 +7,7 @@ import { ReactComponent as HistoryIcon } from '../../assets/icons/history.svg';
 
 export default function Sidebar() {
   return (
-    <div className='flex flex-col justify-between px-5 py-3 border-gray-100 border-r-2 h-screen'>
+    <div className='hidden md:flex flex-col justify-between px-5 py-3 border-gray-100 border-r-2 '>
       <div className='flex flex-col justify-around'>
         <div className='flex justify-center items-center mb-5 my-3'>
           <Logo />
@@ -46,11 +46,11 @@ export default function Sidebar() {
       <div className='flex flex-col justify-center items-center'>
         <div className='flex flex-col justify-center items-center'>
           <div className='flex justify-center items-center w-16 h-16 rounded-full bg-teal'>
-            <span className='text-white font-bold text-2xl'>LE</span>
+            <span className='text-white font-bold text-xl'>LE</span>
           </div>
           <div className='text-center my-3'>
-            <h3 className='text-xl text-gray-900 font-bold'>Lara Edson</h3>
-            <p className='text-gray-400'>lauraedson@work.com</p>
+            <h3 className='text-lg text-gray-900 font-bold'>Lara Edson</h3>
+            <p className='text-gray-400 text-sm'>lauraedson@work.com</p>
           </div>
         </div>
 

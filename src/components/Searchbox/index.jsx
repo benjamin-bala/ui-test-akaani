@@ -6,7 +6,7 @@ export default function SearchBox() {
     <div className='px-3 flex items-center gap-3 border border-gray-100 rounded-lg'>
       <SearchIcon />
       <input
-        className='p-3 w-full outline-none'
+        className='p-2 w-full outline-none'
         placeholder='Search Basket'
         type='search'
       />

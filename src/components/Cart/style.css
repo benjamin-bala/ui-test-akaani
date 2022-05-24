@@ -1,0 +1,15 @@
+.floating-cart-icon {
+  box-shadow: -1px 3px 22px 3px rgba(141, 152, 152, 0.7);
+}
+.custom-position {
+  position: fixed;
+  bottom: 100px;
+  left: 72%;
+}
+
+@media screen and (max-width: 768px) {
+  .custom-position {
+    left: 80%;
+    bottom: 10px;
+  }
+}

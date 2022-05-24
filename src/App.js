@@ -9,14 +9,15 @@ import Baskets from './components/Baskets';
 import Invites from './components/Invites';
 import PreviousOrders from './components/PreviousOrders';
 import RecentPayments from './components/RecentPayments';
+import Cart from './components/Cart';
 
 function App() {
   return (
-    <div className='layout'>
+    <div className='layout md:h-screen'>
       <Sidebar />
       <main className='px-5'>
         <Header />
-        <div className='flex gap-5 justify-around'>
+        <div className='flex md:flex-nowrap flex-wrap gap-5 '>
           <CardBox
             title={'In-Transit Jobs'}
             value={'0'}
@@ -38,8 +39,9 @@ function App() {
         </div>
 
         <Baskets />
+        <Cart />
       </main>
-      <div className='grid grid-rows-3 p-3 border-l-2 border-gray-100'>
+      <div className='hidden md:grid grid-rows-3 p-3 border-l-2 border-gray-100'>
         <Invites />
         <PreviousOrders />
         <RecentPayments />

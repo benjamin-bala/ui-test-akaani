@@ -5,7 +5,6 @@
 
 html {
   font-family: 'Poppins', sans-serif;
-  transition: all 0.1s ease-in-out;
 }
 :root {
   --teal: rgba(26, 130, 130, 1);
@@ -37,7 +36,7 @@ html {
 }
 .layout {
   display: grid;
-  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-columns: 1fr 4fr 1.2fr;
 }
 
 .btn-custom {
@@ -55,4 +54,10 @@ html {
 }
 .btn-effect:active {
   transform: translateY(1px);
+}
+
+@media screen and (max-width: 768px) {
+  .layout {
+    grid-template-columns: 1fr;
+  }
 }

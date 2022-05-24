@@ -13,13 +13,13 @@ export default function Baskets() {
 
       <div className='border-b-2 flex align-items-center gap-6'>
         <div className='cursor-pointer btn-effect px-4 py-1 border-b-2 border-teal'>
-          <p className='text-teal font-bold text-lg'>Paid</p>
+          <p className='text-teal font-bold text-sm md:text-lg'>Paid</p>
         </div>
         <div className='cursor-pointer btn-effect px-4 py-1'>
-          <p className='text-lg text-gray-400'>Pending</p>
+          <p className='text-sm md:text-lg text-gray-400'>Pending</p>
         </div>
         <div className='cursor-pointer btn-effect px-4 py-1'>
-          <p className='text-lg text-gray-400'>Completed</p>
+          <p className='text-sm md:text-lg text-gray-400'>Completed</p>
         </div>
       </div>
 
